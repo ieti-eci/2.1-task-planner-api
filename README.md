@@ -85,7 +85,7 @@ https://spring.io/guides/gs/rest-service/
     export default App;
     ```
 
-2. In order to test your application I recommend Firefox browsers. You must install the following plugin to avoid CORS validation restriction:
+2. In order to test your application I recommend Firefox browser. You must install the following plugin to avoid CORS validation restriction:
 
  https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/
     

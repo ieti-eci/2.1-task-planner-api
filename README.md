@@ -58,7 +58,7 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-spring
                 .then(response => response.json())
                 .then(data => {
                     let tasksList = [];
-                    data.items.forEach(function (book) {
+                    data.items.forEach(function (task) {
                         tasksList.push({
                            //Implement this part
                         })

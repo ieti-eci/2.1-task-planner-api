@@ -40,6 +40,11 @@
 6. Configure your project so you can inject the services implementations anywhere in your project. Use the annotations *@Service* *@Autowired*. Check the official documentation and the following example as guidance:
 https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-spring-beans-and-dependency-injection.html
 
+7. Implement the REST controllers *TaskController* *UserController*. Take a look at the official documentation exacmple:
+https://spring.io/guides/gs/rest-service/
+
+8. Inject the UserService and TaskService on the respective controllers and test your API.
+
 ### Part 2: Consume Task Planner API from React JS App
 
 1. Implemented the method *componentDidMount()* on the React component that displays the Tasks list. Inside the method use the function fetch to retrieve the Task list from the API

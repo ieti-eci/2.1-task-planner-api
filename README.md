@@ -10,13 +10,13 @@
    public interface UserService {
         List<User> getUsersList();
         
-        User getUserById();
+        User getUserById(String userId);
         
-        User createUser();
+        User createUser(User user);
         
-        User updateUser();
+        User updateUser(User user);
         
-        void removeUser();
+        void removeUser(String userId);
     }
     ```
 4. Create an interface to define the contract of the *TaskService* class. This service will handle all users's functionality:
@@ -28,9 +28,9 @@
             
             List<Task> getTasksByUserId(String userId);
             
-            Task assignedTaskToUser(String taskId, User user);
+            Task assignTaskToUser(String taskId, User user);
             
-            void removeTask();
+            void removeTask(String taskId);
             
             Task updateTask(Task task);
         }

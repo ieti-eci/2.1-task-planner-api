@@ -1,4 +1,4 @@
-# Task Planner API
+# 2.1 Task Planner API
 
 ### Part 1: Task Planner API V1
 1. Create a new Spring Boot project using the Spring Initializr: 

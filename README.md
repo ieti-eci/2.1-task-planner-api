@@ -2,52 +2,51 @@
 
 ### Part 1: Task Planner API V1
 1. Create a new Spring Boot project using the Spring Initializr: 
- https://start.spring.io/ 
-![](images/project-config.png)
-2. Create the Java Objects (POJOs) to Map the models of the Task Planner PWA: *User* and *Task*
-3. Create an interface to define the contract of the *UserService* class. This service will handle all users's functionality:
+ https://start.spring.io/
+2. Create Plain Old Java Objects (POJOs) to map the models of the Task Planner PWA: *User* and *Task*
+3. Create an interface to define the contract of the *UserService* class. This service will handle all users' functionality:
     ```java
    public interface UserService {
-        List<User> getUsersList();
+        List<User> getAll();
         
-        User getUserById(String userId);
+        User getById(String userId);
         
-        User createUser(User user);
+        User create(User user);
         
-        User updateUser(User user);
+        User update(User user);
         
-        void removeUser(String userId);
+        void remove(String userId);
     }
     ```
-4. Create an interface to define the contract of the *TaskService* class. This service will handle all users's functionality:
+4. Create an interface to define the contract of the *TaskService* class. This service will handle all tasks' functionality:
     ```java
       public interface TaskService {
-            List<Task> geTasksList();
+            List<Task> geAll();
             
-            Task getTaskById(String id);
+            Task getById(String id);
             
-            List<Task> getTasksByUserId(String userId);
+            List<Task> getByUserId(String userId);
             
             Task assignTaskToUser(String taskId, User user);
             
-            void removeTask(String taskId);
+            void remove(String taskId);
             
-            Task updateTask(Task task);
+            Task update(Task task);
         }
     ```
-5. Implement both contracts (UserService and TaskService).  
+5. Implement both contracts: UserService and TaskService.  
 
-6. Configure your project so you can inject the services implementations anywhere in your project. Use the annotations *@Service* *@Autowired*. Check the official documentation and the following example as guidance:
+6. Configure your project so that you can inject the services implementations anywhere in your project. Use the annotations *@Service* *@Autowired*. Check the official documentation and the following example as guidance:
 https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-spring-beans-and-dependency-injection.html
 
-7. Implement the REST controllers *TaskController* and *UserController*:
+7. Implement the REST controllers *TaskController* and *UserController* to expose the services:
 https://spring.io/guides/gs/rest-service/
 
 8. Inject the *UserService* and *TaskService* on the respective controllers and test your API.
 
-### Part 2: Consume Task Planner API from React JS App
+### Part 2: Consume the Task Planner API from the React JS App
 
-1. Implemented the method *componentDidMount()* on the React component that displays the Tasks list. Inside the method use the function fetch to retrieve the Task list from the API
+1. Implement the lifecycle method *componentDidMount()* on the React component that displays the Tasks list. Inside the method use the function fetch to retrieve the Task list from the API. For now, returning some sample data from the backend would be enough.
     ```javascript
     class App extends Component {
     
@@ -85,7 +84,6 @@ https://spring.io/guides/gs/rest-service/
     export default App;
     ```
 
-2. In order to test your application I recommend Firefox browser. You must install the following plugin to avoid CORS validation restriction:
+__TIP__ In order to test your application I recommend Firefox browser. You must install the following plugin to avoid CORS validation restriction:
 
  https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/
-    

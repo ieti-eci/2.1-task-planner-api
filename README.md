@@ -90,16 +90,16 @@ __Note:__ In case you don't have access to an Azure account, read the following 
 
 https://devcenter.heroku.com/articles/container-registry-and-runtime
 
-### Part 3: Consume the Task Planner API from the React JS App
+### Part 3: Consume the Task Planner API from a React JS App
 
-1. Implement the lifecycle method *componentDidMount()* on the React component that displays the Tasks list. Inside the method use the function fetch to retrieve the Task list from the API. For now, returning some sample data from the backend would be enough.
+1. Implement the lifecycle method *componentDidMount()* on a React component that displays the Users list. Inside the method use the function fetch to retrieve the User list from the API. For now, returning some sample data from the backend would be enough.
     ```javascript
     class App extends Component {
     
         constructor(props) {
             super(props);
             this.state = {
-                tasksList: [],
+                userList: [],
             };
         }
 
@@ -107,21 +107,22 @@ https://devcenter.heroku.com/articles/container-registry-and-runtime
             fetch('REPLACE-API-URL')
                 .then(response => response.json())
                 .then(data => {
-                    let tasksList = [];
-                    data.items.forEach(function (task) {
-                        tasksList.push({
+                    let userList = [];
+                    data.items.forEach(function (user) {
+                        usersList.push({
                            //Implement this part
                         })
     
                     });
-                    this.setState({tasksList: tasksList});
+                    this.setState({userList: userList});
                 });
         }
 
         render() {
             return (
                 <div>
-                    <TasksList tasksList={this.state.tasksList}/>
+                    <!-- Implement a React compontent to render the list -->
+                    <UserList usersList={this.state.usersList}/>
                 </div>
             );
         }

@@ -57,6 +57,8 @@ __Note 1:__ In case you are using Java 1.8, you may need to use a different base
 
 __Note 2:__ You may need to modify the last argument in the __ENTRYPOINT__ according to the name and version of your application
 
+__Note 3:__ For Windows users, the *RUN* and *USER* commands may lead to errors when creating the image. In case that happens, just remove the corresponding lines from the Dockerfile.
+
 3. Assemble your artifact and make sure that a jar file was generated under the *build/libs* folder.
 
     ```bash
